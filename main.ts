@@ -1,13 +1,17 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    numero = randint(1, 6)
     // Lançar d6 é escolher um número aleatório entre 1 e 6.
     // 
     // Se o 
-    if (randint(1, 6) > 3) {
+    if (numero <= 2) {
         game.splash("Ação 1")
-    } else {
+    } else if (numero >= 3 && numero <= 5) {
         game.splash("Ação 2")
+    } else {
+        game.splash("Ação 3")
     }
 })
+let numero = 0
 let jogador = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
